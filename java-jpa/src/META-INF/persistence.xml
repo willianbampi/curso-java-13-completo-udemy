@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" 
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="java-jpa">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<mapping-file>META-INF/consultas.xml</mapping-file>
+		
+		<class>br.com.projeto.modelo.basico.Usuario</class>
+		<class>br.com.projeto.modelo.basico.Produto</class>
+		<class>br.com.projeto.modelo.basico.Cliente</class>
+		<class>br.com.projeto.modelo.basico.Assento</class>
+		<class>br.com.projeto.modelo.basico.Pedido</class>
+		<class>br.com.projeto.modelo.basico.ItemPedido</class>
+		<class>br.com.projeto.modelo.basico.Tio</class>
+		<class>br.com.projeto.modelo.basico.Sobrinho</class>
+		<class>br.com.projeto.modelo.basico.Filme</class>
+		<class>br.com.projeto.modelo.basico.Ator</class>
+		<class>br.com.projeto.modelo.basico.Fornecedor</class>
+		<class>br.com.projeto.modelo.basico.Funcionario</class>
+		<class>br.com.projeto.modelo.basico.Endereco</class>
+		<class>br.com.projeto.modelo.basico.Aluno</class>
+		<class>br.com.projeto.modelo.basico.AlunoBolsista</class>
+		
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/curso_java_jdbc"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="SENHA"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+			<property name="hibernate.show.sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+		</properties>
+	</persistence-unit>
+	
+</persistence>

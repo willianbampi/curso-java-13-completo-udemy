@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mapping version="2.1" 
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<named-query name="obterFilmesComNotaMaiorQue">
+		<query>
+			SELECT DISTINCT f FROM Filme f
+			JOIN fetch f.atores
+			WHERE f.nota > :nota
+		</query>
+	</named-query>
+	
+	<named-native-query name="obterMediaGeralDosFilmes" result-set-mapping="notaFilmeMap">
+		<query>
+			SELECT AVG(nota) AS media FROM filmes
+		</query>
+	</named-native-query>
+	
+	<sql-result-set-mapping name="notaFilmeMap">
+		<constructor-result target-class="br.com.projeto.modelo.basico.NotaFilme">
+			<column name="media" class="java.lang.Double"/>
+		</constructor-result>
+	</sql-result-set-mapping>
+</entity-mapping>
